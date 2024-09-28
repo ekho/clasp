@@ -1,5 +1,5 @@
 {
-  "name": "@ekho/clasp",
+  "name": "ya-clasp",
   "version": "2.4.3",
   "description": "Develop Apps Script Projects locally",
   "type": "module",
