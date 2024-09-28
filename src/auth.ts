@@ -1,11 +1,11 @@
+import type {Credentials, GenerateAuthUrlOpts, OAuth2ClientOptions} from 'google-auth-library';
 import {OAuth2Client} from 'google-auth-library';
 import {google, script_v1 as scriptV1} from 'googleapis';
+import type {IncomingMessage, Server, ServerResponse} from 'http';
 import {createServer} from 'http';
 import open from 'open';
 import readline from 'readline';
 import enableDestroy from 'server-destroy';
-import type {Credentials, GenerateAuthUrlOpts, OAuth2ClientOptions} from 'google-auth-library';
-import type {IncomingMessage, Server, ServerResponse} from 'http';
 import type {AddressInfo} from 'net';
 import type {ReadonlyDeep} from 'type-fest';
 
@@ -198,7 +198,9 @@ export const loadAPICredentials = async (local = false): Promise<ClaspToken> => 
   if (!local) {
     try {
       return loadAPICredentials(true);
-    } catch (e) { /* nothing to do */ }
+    } catch (e) {
+      /* nothing to do */
+    }
   }
 
   const rc: ClaspToken = await getOAuthSettings(local);
