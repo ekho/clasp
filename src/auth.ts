@@ -195,9 +195,10 @@ export const getLoggedInEmail = async () => {
  */
 export const loadAPICredentials = async (local = false): Promise<ClaspToken> => {
   // Gets the OAuth settings. May be local or global.
+
   if (!local) {
     try {
-      return loadAPICredentials(true);
+      return await loadAPICredentials(true);
     } catch (e) {
       /* nothing to do */
     }
